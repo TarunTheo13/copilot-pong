@@ -27,10 +27,11 @@ const AI_SPEED = 4;
 let leftScore = 0;
 let rightScore = 0;
 
-// Mouse control for left paddle
-canvas.addEventListener('mousemove', (e) => {
+// Mouse control for left paddle (works anywhere on page)
+document.addEventListener('mousemove', (e) => {
     const rect = canvas.getBoundingClientRect();
-    leftPaddleY = e.clientY - rect.top - PADDLE_HEIGHT / 2;
+    const mouseY = e.clientY - rect.top;
+    leftPaddleY = mouseY - PADDLE_HEIGHT / 2;
 
     // Clamp paddle so it stays in bounds
     if (leftPaddleY < 0) leftPaddleY = 0;

@@ -1,1 +1,1 @@
-# copilot-pong
+# Copilot Pong
